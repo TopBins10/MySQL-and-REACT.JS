@@ -16,8 +16,8 @@ const RawData = () => {
             <h2>Orders</h2>
             <ul>
                 {orders.map(order => (
-                    <li key={order.OrderID}>
-                        Order Date: {order.orer_date}, Amount: {order.order_amount}, Customer ID: {order.customer_id}
+                    <li key={order.order_id}>
+                        Order Date: {order.order_date}, Amount: {order.order_amount}, Customer ID: {order.customer_id}
                     </li>
                 ))}
             </ul>

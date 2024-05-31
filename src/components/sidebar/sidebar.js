@@ -5,6 +5,7 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import DataArrayIcon from '@mui/icons-material/TableView'; // This icon can vary depending on what you feel is appropriate
 import { Link } from 'react-router-dom';
 
+
 const Sidebar = () => {
   return (
     <Drawer
@@ -30,6 +31,12 @@ const Sidebar = () => {
             <DataArrayIcon />
           </ListItemIcon>
           <ListItemText primary="Raw Data" />
+        </ListItem>
+        <ListItem button component={Link} to="/chatbot">
+          <ListItemIcon>
+            <DataArrayIcon />
+          </ListItemIcon>
+          <ListItemText primary="peelie" />
         </ListItem>
       </List>
     </Drawer>
