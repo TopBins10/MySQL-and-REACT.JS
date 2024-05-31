@@ -7,13 +7,13 @@ const uuid = require('uuid');
 const path = require('path');
 
 // Set the environment variable programmatically to the JSON key file in the same directory
-process.env.GOOGLE_APPLICATION_CREDENTIALS = path.join(__dirname, 'psqlreactagent-ibki-b78752511b3e.json'); // Replace with the actual name of your JSON key file
+process.env.GOOGLE_APPLICATION_CREDENTIALS = path.join(__dirname, 'psqlreactagent-ibki-b78752511b3e.jon'); // Replace with the actual name of your JSON key file
 
 const pool = new Pool({
   user: 'postgres',
   host: 'localhost',
   database: 'reactproject',
-  password: 'connection',
+  password: 'connectioni',
   port: 5432,
 });
 
