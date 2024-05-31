@@ -3,13 +3,17 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const dialogflow = require('dialogflow');
-const { v4: uuidv4 } = require('uuid');
+const uuid = require('uuid');
+const path = require('path');
+
+// Set the environment variable programmatically to the JSON key file in the same directory
+process.env.GOOGLE_APPLICATION_CREDENTIALS = path.join(__dirname, 'psqlreactagent-ibki-b78752511b3e.json'); // Replace with the actual name of your JSON key file
 
 const pool = new Pool({
   user: 'postgres',
   host: 'localhost',
   database: 'reactproject',
-  password: '*********',
+  password: 'VMessi#10',
   port: 5432,
 });
 
@@ -47,11 +51,11 @@ app.get('/api/orders', (req, res) => {
 });
 
 // Dialogflow setup
-const projectId = 'my-dialogflow-agent';
+const projectId = 'psqlreactagent-ibki'; // Replace with your Dialogflow project ID
 
 app.post('/api/chatbot', async (req, res) => {
   const { message } = req.body;
-  const sessionId = uuidv4();
+  const sessionId = uuid.v4(); // Generate a new session ID for each conversation
   const sessionClient = new dialogflow.SessionsClient();
   const sessionPath = sessionClient.sessionPath(projectId, sessionId);
 
